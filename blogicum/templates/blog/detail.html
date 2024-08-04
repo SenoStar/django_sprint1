@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+  {{ post.date }}
+{% endblock %}
+{% block content %}
+  <main>
+    <!-- Из-за класса container py-5 не знаю как сделать ровным текст !-->
+      <div class="container py-5">
+        <article>
+          <ul>
+            <li>
+              Место: {{ post.location }}
+            </li>
+            <li>
+              Дата: {{ post.date }}
+            </li>
+            <li>
+              Категория: <a href="{% url 'blog:category' post.category %}" >{{ post.category }}</a>
+          </ul>
+          <p>
+            {{ post.text }}
+          </p>
+        </article>
+      </div>
+    </main>
+{% endblock %}
